@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="greet.css">
+
+</head>
+
+<body>
+
+  <h1>Greeting Widget</h1>
+
+  <div class="greeting-widget-box">
+    <input type="text" id="nameInput" class="input" placeholder="Enter your name">
+
+    <button id="greetButton" class="greetBtn">Greet Me</button>
+
+    <p id="greetingMessage" class="greetMessage"></p>
+
+    <div id="languageSelection">
+      <input type="radio" name="language" value="english"> English
+      <input type="radio" name="language" value="spanish"> Spanish
+      <input type="radio" name="language" value="isizulu"> IsiZulu
+    </div>
+
+    <div id="greetingCount">
+      <p id="greeting" class="greetings"></p>
+      <p>Greet count: <span id="count" class="countGreet">0</span></p>
+    </div>
+
+    <button id="resetButton" class="reset">Reset</button>
+
+  </div>
+
+  <script src="greet.js"></script>
+
+</body>
+
+</html>

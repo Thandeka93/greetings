@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(190, 189, 189);
+    font-size: large;
+
+}
+
+.greeting-widget-box {
+    border: 2px solid #4e4b4b;
+    padding: 20px;
+    width: 500px;
+    height: 210px;
+    margin: 0 auto;
+  }
+  
+  .input {
+    width: 60%;
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  
+  .greetBtn {
+    background-color: #6f746f;
+    color: white;
+    padding: 10px 20px;
+    width: 120px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .greetBtn:hover {
+    background-color: #53945a;
+  }
+  
+  .greetMessage {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  #languageSelection {
+    margin-top: 10px;
+  }
+  
+  #greetingCount {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #greetingCount p {
+    margin: 0;
+  }
+  
+  #greetingCount span {
+    font-weight: bold;
+  }
+  .reset {
+    background-color: #6f746f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 120px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+
+  
