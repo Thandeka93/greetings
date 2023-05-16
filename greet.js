@@ -4,7 +4,7 @@ function greetingWidget() {
   const greetingElement = document.querySelector(".greetings");
   const greetCountElement = document.querySelector(".countGreet");
   const errorElement = document.querySelector(".error-message");
-  const languageSelection = document.querySelector("#languageSelection");
+  const languageSelection = document.querySelector(".languageSelection");
 
   let greetCount = localStorage.getItem("greetCount") || 0;
   greetCountElement.innerHTML = greetCount;
