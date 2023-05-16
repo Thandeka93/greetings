@@ -8,64 +8,75 @@ body {
 }
 
 .greeting-widget-box {
-    border: 2px solid #4e4b4b;
-    padding: 20px;
-    width: 500px;
-    height: 210px;
+    max-width: 500px;
     margin: 0 auto;
-  }
-  
-  .input {
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    color: #333;
+}
+
+.error-message{
+    font-size: x-large;
+    
+}
+
+.input {
     width: 60%;
+    height: 18px;
     padding: 8px;
     margin-bottom: 10px;
     margin-top: 15px;
-  }
-  
-  .greetBtn {
+}
+
+.greetBtn {
     background-color: #6f746f;
     color: white;
     padding: 10px 20px;
     width: 120px;
-    border: none;
     cursor: pointer;
-  }
-  
-  .greetBtn:hover {
-    background-color: #53945a;
-  }
-  
-  .greetMessage {
-    margin-top: 10px;
+}
+
+.greetBtn:hover,
+.reset:hover {
+    background-color: #45a049;
+}
+
+#languageSelection {
     margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+#count {
     font-weight: bold;
-  }
-  
-  #languageSelection {
-    margin-top: 10px;
-  }
-  
-  #greetingCount {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  #greetingCount p {
-    margin: 0;
-  }
-  
-  #greetingCount span {
+}
+
+.greetMessage {
+    margin-bottom: 10px;
+}
+
+.greetings {
+    text-align: center;
+    font-size: 18px;
     font-weight: bold;
-  }
-  .reset {
-    background-color: #6f746f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    width: 120px;
-    margin-bottom: 20px;
+    color: #333;
+}
+
+.reset {
+    display: block;
+    width: 40%; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #545a54;
+    color: #fff;
+    border-radius: 3px;
     cursor: pointer;
-  }
-
-
-  
+}
