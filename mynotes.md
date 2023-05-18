@@ -90,3 +90,50 @@ To test GREET FUNCTION
 2. Create a new test file:
 - Create a new file named greet.test.js
 
+I STILL NEED TO UNDERSTAND MORE ABOUT [JSON.stringify() and JSON.parse()]. 
+
+In JavaScript, JSON.stringify() and JSON.parse() are methods that are part of the built-in JSON object. They are used for converting JavaScript objects or values to JSON strings and parsing JSON strings back into JavaScript objects or values, respectively.
+
+JSON.stringify(): This method takes a JavaScript object or value and converts it into a JSON string representation. It serializes the object by converting its properties to a string format that adheres to the JSON (JavaScript Object Notation) syntax. 
+The syntax for using JSON.stringify() is as follows:
+
+Example of syntanx: 
+JSON.stringify(value[, replacer[, space]])
+Explainantion of the above code:
+> value: The JavaScript object or value to be converted into a JSON string.
+
+> replacer (optional): A function or an array specifying the properties included in the resulting JSON string, or a value transformation. It can be used to filter and transform values during serialization. If replacer is an array, only the specified properties are included in the resulting JSON string.
+
+> space (optional): A string or number that specifies the indentation of nested levels in the resulting JSON string. It controls the spacing used for formatting the output to make it more readable.
+
+Example usage of JSON.stringify():
+
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+const jsonString = JSON.stringify(person);
+console.log(jsonString);
+// Output: {"name":"John","age":30,"city":"New York"}
+
+JSON.parse(): This method takes a JSON string and parses it into a JavaScript object or value. It deserializes the string by reconstructing the JavaScript object from the JSON representation. The syntax for using JSON.parse() is as follows:
+
+Example syntax: 
+JSON.parse(text[, reviver])
+
+Explanation of the above syntax:
+> text: The JSON string to be parsed into a JavaScript object.
+> reviver (optional): A function that can be used to transform or filter the resulting object. It can be used to modify values or exclude properties during parsing.
+
+Example usage of JSON.parse():
+const jsonString = '{"name":"John","age":30,"city":"New York"}';
+
+const person = JSON.parse(jsonString);
+console.log(person.name); // Output: John
+console.log(person.age); // Output: 30
+console.log(person.city); // Output: New York
+
+SUMMARY: Using JSON.stringify() and JSON.parse() together, you can convert JavaScript objects to JSON strings and then parse those strings back into JavaScript objects as needed.
+

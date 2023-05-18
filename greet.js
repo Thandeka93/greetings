@@ -9,33 +9,30 @@ function greetingWidget() {
   let greetCount = localStorage.getItem("greetCount") || 0;
   greetCountElement.innerHTML = greetCount;
 
-  let greetedNames = {};
+  const greetedNames = Greeting();
 
   function handleGreetButton() {
     const name = input.value.trim();
     const selectedLanguage = document.querySelector("input[name='language']:checked");
 
     if (name !== "" && selectedLanguage !== null) {
-      errorElement.innerHTML = ""; 
+      errorElement.innerHTML = "";
 
-      const selectedLanguageValue = selectedLanguage.value;
-      const greeting = getGreeting(selectedLanguageValue, name);
+      const selectedLanguageValue = selectedLanguage.value.toLowerCase();
+      const greeting = greetedNames.getName(name, selectedLanguageValue);
       greetingElement.innerHTML = greeting;
       input.value = "";
 
-      if (!greetedNames.hasOwnProperty(name)) {
-        greetCount++;
-        greetCountElement.innerHTML = greetCount;
-        greetedNames[name] = true;
-      }
+      greetedNames.addName(name, selectedLanguageValue);
 
+      greetCount = greetedNames.getGreetCount();
+      greetCountElement.innerHTML = greetCount;
       localStorage.setItem("greetCount", greetCount);
     } else {
       if (name === "") {
-        errorElement.innerHTML = "Please enter a name."; 
-      } else {
-        errorElement.innerHTML = "Please select a language."; 
+        errorElement.innerHTML = "Please enter a name and select a language.";
       }
+
     }
   }
 
@@ -46,27 +43,11 @@ function greetingWidget() {
     greetCountElement.innerHTML = greetCount;
   });
 
-  function getGreeting(language, name) {
-    switch (language) {
-      case "english":
-        return 'Hello, ' + name + '!';
-
-      case "spanish":
-        return '¡Hola,' + name + '!';
-
-      case "isizulu":
-        return 'Sawubona,' + name + '!';
-
-      default:
-        return 'Hello,' + name + '!';
-    }
-  }
-
   function resetGreetCounter() {
-    greetCount = 0;
+    greetedNames.resetGreetCount();
+    greetCount = greetedNames.getGreetCount();
     greetCountElement.innerHTML = greetCount;
     localStorage.setItem("greetCount", greetCount);
-    greetedNames = {};
   }
 
   const reset = document.querySelector(".reset");
@@ -74,6 +55,10 @@ function greetingWidget() {
 }
 
 greetingWidget();
+
+
+
+
 
 
 
