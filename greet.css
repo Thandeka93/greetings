@@ -4,7 +4,6 @@ body {
     padding: 20px;
     background-color: rgb(190, 189, 189);
     font-size: large;
-
 }
 
 .greeting-widget-box {
@@ -22,10 +21,9 @@ h1 {
     color: #333;
 }
 
-.error-message{
-    font-size: x-large;
-    font-style: italic;
-    
+#greetingMessage {
+    margin-bottom: 10px;
+    font-size: large;
 }
 
 .input {
@@ -54,12 +52,14 @@ h1 {
     margin-top: 15px;
 }
 
-#count {
-    font-weight: bold;
+.error-message {
+    font-size: x-large;
+    font-style: italic;
+    color: red;
 }
 
-.greetMessage {
-    margin-bottom: 10px;
+#count {
+    font-weight: bold;
 }
 
 .greetings {
@@ -71,7 +71,7 @@ h1 {
 
 .reset {
     display: block;
-    width: 40%; 
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -81,3 +81,4 @@ h1 {
     border-radius: 3px;
     cursor: pointer;
 }
+

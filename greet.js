@@ -28,18 +28,21 @@ function greetingWidget() {
       greetCount = greetedNames.getGreetCount();
       greetCountElement.innerHTML = greetCount;
       localStorage.setItem("greetCount", greetCount);
+
+      selectedLanguage.checked = false;
     } else {
       if (name === "") {
         errorElement.innerHTML = "Please enter a name and select a language.";
+        setTimeout(function () {errorElement.innerHTML = "";
+        }, 4000);
       }
-
     }
   }
 
   greetBtn.addEventListener("click", handleGreetButton);
 
   window.addEventListener("load", function () {
-    greetCount = localStorage.getItem("greetCount") || 0;
+    greetCount = greetedNames.getGreetCount();
     greetCountElement.innerHTML = greetCount;
   });
 
@@ -55,6 +58,10 @@ function greetingWidget() {
 }
 
 greetingWidget();
+
+
+
+
 
 
 

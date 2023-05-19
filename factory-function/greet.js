@@ -4,9 +4,11 @@ function Greeting() {
   let greetCount = 0;
 
   function addName(name, language) {
-    if (!names.hasOwnProperty(name)) {
-      names[name] = language;
+    const lowercaseName = name.toLowerCase(); // Convert name to lowercase
+    if (!names.hasOwnProperty(lowercaseName)) {
+      names[lowercaseName] = language;
       greetCount++;
+      clearRadioButtons();
     }
   }
 
@@ -26,7 +28,7 @@ function Greeting() {
     if (Object.keys(names).length === 0) {
       message = "Please enter a name";
     } else {
-      message = "Please select a language";
+      message = "Please enter a name and select a language";
     }
     return message;
   }
@@ -38,7 +40,15 @@ function Greeting() {
   function resetGreetCount() {
     names = {};
     greetCount = 0;
+    clearRadioButtons();
     localStorage.removeItem("greetCount");
+  }
+  
+  function clearRadioButtons() {
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(button => {
+      button.checked = false;
+    });
   }
 
   return {
@@ -46,7 +56,10 @@ function Greeting() {
     getName,
     getMessage,
     getGreetCount,
-    resetGreetCount
+    resetGreetCount,
+    clearRadioButtons,
+    
   };
 }
+
 
