@@ -51,12 +51,12 @@ describe('Greet Function ', function () {
         assert.equal(greetCount, 2);
     });
 
-    it("should be able to return error message when no name entered and  no radio button is checked", function () {
-        const greetApp = Greeting()
-        greetApp.addName("Thandeka")
-        const greeting = greetApp.getName("Thandeka")
+    it("should be able to return error message when no name entered and no radio button is checked", function () {
+        const greetApp = Greeting();
+        const greeting = greetApp.getName(""); 
         assert.equal("Please enter a name and select a language", greetApp.getMessage());
     });
+    
 
     it("should clear all radio buttons when greeted successfully", function () {
         let greetApp = Greeting();
@@ -65,5 +65,15 @@ describe('Greet Function ', function () {
         const allButtonsCleared = Array.from(radioButtons, ({ checked }) => !checked).every(Boolean);
         assert.equal(allButtonsCleared, true);
     });
-
+    
+  it("should reset the greetCount, remove 'greetCount' from localStorage", function () {
+   var names = {}; 
+   var greetCount = 0; 
+    let greetApp = Greeting();
+    greetApp.resetGreetCount();
+    assert.deepEqual(names, {});
+    assert.equal(greetCount, 0);
+  });
 });
+
+

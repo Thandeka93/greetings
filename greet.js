@@ -21,6 +21,7 @@ function greetingWidget() {
       const selectedLanguageValue = selectedLanguage.value.toLowerCase();
       const greeting = greetedNames.getName(name, selectedLanguageValue);
       greetingElement.innerHTML = greeting;
+      greetingElement.style.fontSize = "30px";
       input.value = "";
 
       greetedNames.addName(name, selectedLanguageValue);
@@ -32,19 +33,13 @@ function greetingWidget() {
       selectedLanguage.checked = false;
     } else {
       if (name === "") {
-        errorElement.innerHTML = "Please enter a name and select a language.";
-        setTimeout(function () {errorElement.innerHTML = "";
-        }, 4000);
+        errorElement.innerHTML="Please enter a name and select a language"
+        setTimeout(function () {errorElement.innerHTML = ""}, 2000);
       }
     }
   }
 
   greetBtn.addEventListener("click", handleGreetButton);
-
-  window.addEventListener("load", function () {
-    greetCount = greetedNames.getGreetCount();
-    greetCountElement.innerHTML = greetCount;
-  });
 
   function resetGreetCounter() {
     greetedNames.resetGreetCount();
@@ -55,9 +50,20 @@ function greetingWidget() {
 
   const reset = document.querySelector(".reset");
   reset.addEventListener("click", resetGreetCounter);
+
+  reset.addEventListener("click", function () {
+    localStorage.removeItem("greetCount");
+  });
+
+  window.addEventListener("load", function () {
+    greetCount = localStorage.getItem("greetCount") || 0;
+    greetCountElement.innerHTML = greetCount;
+  });
 }
 
 greetingWidget();
+
+
 
 
 

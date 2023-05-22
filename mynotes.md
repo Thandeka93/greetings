@@ -137,3 +137,75 @@ console.log(person.city); // Output: New York
 
 SUMMARY: Using JSON.stringify() and JSON.parse() together, you can convert JavaScript objects to JSON strings and then parse those strings back into JavaScript objects as needed.
 
+TIMEOUT [HowDoesItWork]
+
+Definition and Usage
+The setTimeout() method calls a function after a number of milliseconds.
+
+1 second = 1000 milliseconds.
+
+Notes
+The setTimeout() is executed only once.
+
+If you need repeated executions, use setInterval() instead.
+
+Use the clearTimeout() method to prevent the function from starting.
+
+To clear a timeout, use the id returned from setTimeout():
+
+myTimeout = setTimeout(function, milliseconds);
+Then you can to stop the execution by calling clearTimeout():
+
+clearTimeout(myTimeout);
+See Also:
+The clearTimeout() Method
+
+The setInterval() Method
+
+The clearInterval() Method
+
+Syntax
+setTimeout(function, milliseconds, param1, param2, ...)
+Parameters
+Parameter	Description
+function	Required.
+The function to execute.
+milliseconds	Optional.
+Number of milliseconds to wait before executing.
+Default value is 0.
+param1,
+param2,
+...	Optional.
+Parameters to pass to the function.
+Not supported in IE9 and earlier.
+Return Value
+Type	Description
+A number	The id of the timer.
+Use this id with clearTimeout(id) to cancel the timer.
+
+More Examples
+Display an alert box after 3 seconds (3000 milliseconds):
+
+let timeout;
+
+function myFunction() {
+  timeout = setTimeout(alertFunc, 3000);
+}
+
+function alertFunc() {
+  alert("Hello!");
+}
+
+Open a new window and close the window after three seconds (3000 milliseconds):
+
+const myWindow = window.open("", "", "width=200, height=100");
+setTimeout(function() {myWindow.close()}, 3000);
+
+However, if you use an anonymous function, it will work in all browsers:
+
+setTimeout(function() {myFunc("param1", "param2")}, 2000);
+
+
+
+
+        
